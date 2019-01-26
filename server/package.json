@@ -29,6 +29,7 @@
     "@nestjs/swagger": "^2.5.1",
     "apollo-server-express": "^2.3.2",
     "body-parser": "^1.18.3",
+    "class-validator": "^0.9.1",
     "cors": "^2.8.5",
     "graphql": "^14.1.1",
     "graphql-tools": "^4.0.4",
