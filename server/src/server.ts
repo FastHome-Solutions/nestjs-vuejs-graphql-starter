@@ -4,10 +4,14 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 
 const express = require('express');
+const bodyParser = require('body-parser');
 
 async function bootstrap() {
     const server = express();
     server.use('/', express.static('../client/dist'));
+    server.use(bodyParser.json({limit: '10mb', extended: true}));
+    server.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
+
     const app = await NestFactory.create(AppModule, server);
     app.setGlobalPrefix('api');
 
