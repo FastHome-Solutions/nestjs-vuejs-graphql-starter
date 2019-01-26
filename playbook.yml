@@ -1,0 +1,40 @@
+# Ansible playbook to deploy the service to a docker host
+#
+# Usage:
+#   ansible-playbook -i "<host>," --extra-vars 'ansible_ssh_user=<ssh_user> image=<image> version=<version>' -v deploy/playbook.yml
+#
+#   with:
+#     <host>:      hostname or IP address of the docker host where the service should be deployed.
+#                  The comma (",") after the <host> is importent as ansible will interpret the string as
+#                  a filename otherwise.
+#     <ssh_user>:  SSH user that should be used when connecting to the docker host
+#     <image>:     the name of the image that should be deployed.
+#     <version>:   the version of the image that should be deployed.
+
+---
+- hosts: all
+  vars:
+    registry_url: registry:5000
+    service_name: "{{ image }}"
+    service_db_host: "{{ db_host }}"
+    app_name: "{{  app_name }}"
+    app_external_port: "{{ app_external_port }}"
+    docker_network_name: "{{ docker_network_name }}"
+  tasks:
+  - name: restart app container
+    docker_container:
+      image: "{{ registry_url }}/{{ image }}:{{ version }}"
+      name: "{{ service_name }}"
+      restart_policy: always
+      pull: yes
+      state: started
+      env:
+        APP_NAME: "{{ app_name }}"
+        NODE_ENV: production
+        https_proxy: "{{lookup('env', 'https_proxy')}}"
+      networks:
+        - name: "{{ docker_network_name }}"
+          links:
+            - "eureka-service:eureka"
+      ports:
+        # - "127.0.0.1:{{ app_external_port }}:8080"
