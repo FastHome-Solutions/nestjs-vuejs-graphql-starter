@@ -9,7 +9,12 @@
   },
   "dependencies": {
     "apollo-boost": "^0.1.27",
+    "apollo-cache-inmemory": "^1.4.2",
+    "apollo-client": "^2.4.12",
+    "apollo-link": "^1.2.6",
+    "apollo-link-http": "^1.5.9",
     "graphql": "^14.1.1",
+    "graphql-tag": "^2.10.1",
     "vue": "^2.5.21",
     "vue-apollo": "^3.0.0-beta.27",
     "vue-router": "^3.0.2",
