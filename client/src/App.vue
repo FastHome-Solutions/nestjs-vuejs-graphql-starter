@@ -2,7 +2,7 @@
   <v-app id="inspire" dark>
     <v-navigation-drawer clipped fixed v-model="drawer" app>
       <v-list dense>
-        <v-list-tile @click="">
+        <v-list-tile :to="{path: '/dashboard'}">
           <v-list-tile-action>
             <v-icon>dashboard</v-icon>
           </v-list-tile-action>
@@ -10,7 +10,7 @@
             <v-list-tile-title>Dashboard</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile @click="">
+        <v-list-tile :to="{path: '/settings'}">
           <v-list-tile-action>
             <v-icon>settings</v-icon>
           </v-list-tile-action>
@@ -30,7 +30,7 @@
       <v-container fluid fill-height>
         <v-layout justify-center align-center>
           <v-flex shrink>
-            <hello-world/>
+            <router-view></router-view>
           </v-flex>
         </v-layout>
       </v-container>
@@ -43,12 +43,9 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-
 export default {
   name: 'App',
   components: {
-    HelloWorld
   },
   data () {
     return {
