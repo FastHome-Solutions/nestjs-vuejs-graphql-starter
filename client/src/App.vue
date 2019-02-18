@@ -2,6 +2,14 @@
   <v-app id="inspire" dark>
     <v-navigation-drawer clipped fixed v-model="drawer" app>
       <v-list dense>
+        <v-list-tile :to="{path: '/cats'}">
+          <v-list-tile-action>
+            <v-icon>info</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Cats</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
         <v-list-tile :to="{path: '/dashboard'}">
           <v-list-tile-action>
             <v-icon>dashboard</v-icon>
