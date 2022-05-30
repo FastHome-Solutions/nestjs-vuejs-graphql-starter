@@ -4,6 +4,60 @@
 Long awaited, the holly grail of bla bla bla
 
 
+# server
+
+https://docs.nestjs.com/#installation
+
+npm i -g @nestjs/cli
+
+added 248 packages, and audited 249 packages in 7s
+
+37 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+
+nest new server
+⚡  We will scaffold your app in a few seconds..
+
+CREATE server/.eslintrc.js (665 bytes)
+CREATE server/.prettierrc (51 bytes)
+CREATE server/README.md (3340 bytes)
+CREATE server/nest-cli.json (118 bytes)
+CREATE server/package.json (1991 bytes)
+CREATE server/tsconfig.build.json (97 bytes)
+CREATE server/tsconfig.json (546 bytes)
+CREATE server/src/app.controller.spec.ts (617 bytes)
+CREATE server/src/app.controller.ts (274 bytes)
+CREATE server/src/app.module.ts (249 bytes)
+CREATE server/src/app.service.ts (142 bytes)
+CREATE server/src/main.ts (208 bytes)
+CREATE server/test/app.e2e-spec.ts (630 bytes)
+CREATE server/test/jest-e2e.json (183 bytes)
+
+? Which package manager would you ❤️  to use? npm
+✔ Installation in progress... ☕
+
+🚀  Successfully created project server
+👉  Get started with the following commands:
+
+$ cd server
+$ npm run start
+
+                                         
+                          Thanks for installing Nest 🙏
+                 Please consider donating to our open collective
+                        to help us maintain this package.
+                                         
+                                         
+               🍷  Donate: https://opencollective.com/nest
+
+
+NOTE: The server folder contains a git repo - remove it.
+
+
+
 # client
 
 https://vuejs.org/guide/quick-start.html#with-build-tools
